@@ -14,6 +14,9 @@ while True:
 
     # Run detection
     results = model(frame)
+    results = model(frame, conf=0.5)  # lower confidence threshold if needed
+    
+
 
     # Draw boxes
     annotated_frame = results[0].plot()
@@ -21,7 +24,7 @@ while True:
     cv2.imshow("Phone Detection", annotated_frame)
 
     # Press 'q' to quit
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    if cv2.waitKey(20) & 0xFF == ord('q'):
         break
 
 cap.release()
