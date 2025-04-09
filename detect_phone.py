@@ -14,12 +14,12 @@ while True:
 
     # Run detection
     results = model(frame)
-    results = model(frame, conf=0.5)  # lower confidence threshold if needed
+    results = model(frame, conf=0.4)  # lower confidence threshold if needed
     
 
 
     # Draw boxes
-    annotated_frame = results[0].plot()
+    annotated_frame = results[0].plot( )
 
     cv2.imshow("Phone Detection", annotated_frame)
 
